@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+    {{ $image := .Resources.GetMatch "featured-image" }}
+    {{ with $image }}
+        $image.Permalink
+    {{ end }}
+
+    {{ printf "%#v" .Resources }}
+    <br>
+    <br>
+    {{ printf "%#v" .Params.resources }}
+
+
+    <br>
+    <br>
+    <br>
+
+    {{ .Content }}
+{{ end }}
